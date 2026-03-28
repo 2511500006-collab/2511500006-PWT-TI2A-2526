@@ -104,8 +104,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
  <!-- Sidebar Menu -->
 <nav class="mt-2">
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-<!-- Add icons to the links using the .nav-icon class
-with font-awesome or any other icon font library -->
 
   <li class="nav-item menu-open">
     <a href="#" class="nav-link active">
@@ -146,28 +144,42 @@ with font-awesome or any other icon font library -->
             <?php endif; ?>   
 
             <?php if ($role == 'guru') : ?>
-            <ul class="nav nav-treeview">
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+             <a href="profil_guru.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+               <p>Profil</p>
+              </a>
+         </li>
+
+        <li class="nav-item">
+                <a href="kelas_guru.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+              <p>Kelas</p>
+              </a>
+             </li>
+
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="jadwal_guru.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profil</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kelas</p>
-                </a>
+                  <p>Jadwal</p>
+               </a>
               </li>
             </ul>
-            <?php endif; ?>            
+            <?php endif; ?>     
 
             <?php if ($role == 'siswa') : ?>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="profil_siswa.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profil</p>
+                </a>
+              </li>
+            <li class="nav-item">
+              <a href="jadwal_siswa.php" class="nav-link active">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Jadwal</p>
                 </a>
               </li>
             </ul>
