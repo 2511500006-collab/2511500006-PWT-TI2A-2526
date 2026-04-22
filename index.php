@@ -135,7 +135,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="index.php?page=kelas" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kelas</p>
                 </a>
@@ -143,47 +143,62 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
             <?php endif; ?>   
 
-            <?php if ($role == 'guru') : ?>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-             <a href="profil_guru.php" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-               <p>Profil</p>
-              </a>
-         </li>
-
+<?php if ($role == 'guru') : ?>
+      <ul class="nav nav-treeview">
         <li class="nav-item">
-                <a href="kelas_guru.php" class="nav-link">
+          <a href="index.php?page=profil_guru" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Profil</p>
+          </a>
+      </li>
+
+            <li class="nav-item">
+              <a href="index.php?page=ganti_password" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+          <p>Ganti Password</p>
+        </a>
+     </li>
+
+            <li class="nav-item">
+              <a href="index.php?page=kelas_guru" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
               <p>Kelas</p>
               </a>
-             </li>
+          </li>
 
-              <li class="nav-item">
-                <a href="jadwal_guru.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Jadwal</p>
-               </a>
-              </li>
-            </ul>
-            <?php endif; ?>     
+          <li class="nav-item">
+             <a href="index.php?page=jadwal_guru" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Jadwal</p>
+            </a>
+        </li>
+      </ul>
+<?php endif; ?> 
 
-            <?php if ($role == 'siswa') : ?>
+<?php if ($role == 'siswa') : ?>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="profil_siswa.php" class="nav-link">
+                 <a href="profil_siswa.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profil</p>
-                </a>
-              </li>
+                <p>Profil</p>
+              </a>
+          </li>
+
             <li class="nav-item">
-              <a href="jadwal_siswa.php" class="nav-link active">
+              <a href="ganti_password.php" class="nav-link">
+               <i class="far fa-circle nav-icon"></i>
+              <p>Ganti Password</p>
+            </a>
+        </li>
+
+            <li class="nav-item">
+               <a href="jadwal_siswa.php" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Jadwal</p>
-                </a>
-              </li>
-            </ul>
-            <?php endif; ?> 
+              <p>Jadwal</p>
+           </a>
+        </li>
+      </ul>
+<?php endif; ?>
 
           </li>
               <li class="nav-item">

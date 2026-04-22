@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Data mapel</h1>
+        <h1 class="m-0 text-dark">Data Kelas</h1>
       </div>
     </div>
   </div>
@@ -11,15 +11,15 @@
 <?php
 if(isset($_GET['action'])) {
   if($_GET['action'] == "hapus") {
-    $kd = $_GET['kd'];
-    $query = mysqli_query($koneksi, "DELETE FROM tabel_mapel WHERE kd_mapel = '$kd'");
+    $id = $_GET['id'];
+    $query = mysqli_query($koneksi, "DELETE FROM tabel_kelas WHERE Id_kelas = '$id'");
     
     if($query){
       echo '
       <div class="alert alert-warning alert-dismissible">
-        Berhasil Di Hapus
+        Berhasil Dihapus
       </div>';
-      echo '<meta http-equiv="refresh" content="1;url=index.php?page=mapel">';
+      echo '<meta http-equiv="refresh" content="1;url=index.php?page=kelas">';
     }
   }
 }
@@ -28,37 +28,35 @@ if(isset($_GET['action'])) {
 <div class="container-fluid">
   <div class="card">
     <div class="card-body">
-      <a href="index.php?page=tambah_mapel" class="btn btn-primary btn-sm">
-        Tambah Mapel
+      <a href="index.php?page=tambah_kelas" class="btn btn-primary btn-sm">
+        Tambah Kelas
       </a>
       <table class="table table-striped">
-        <tread>
+        <thead>
           <tr>
             <th>NO</th>
-            <th>Kd mapel</th>
-            <th>Nama mapel</th>
-            <th>KKM</th>
+            <th>ID Kelas</th>
+            <th>Nama Kelas</th>
             <th>Aksi</th>
           </tr>
-        </tread>
+        </thead>
         <?php
         $no = 0;
-        $query = mysqli_query($koneksi, "SELECT * FROM tabel_mapel");
+        $query = mysqli_query($koneksi, "SELECT * FROM tabel_kelas");
         while ($result = mysqli_fetch_array($query)) {
           $no++;
         ?>
         <tbody>
           <tr>
             <td><?= $no; ?></td>
-            <td><?= $result['kd_mapel']; ?></td>
-            <td><?= $result['nm_mapel']; ?></td>
-            <td><?= $result['kkm']; ?></td>
+            <td><?= $result['Id_kelas']; ?></td>
+            <td><?= $result['Nm_kelas']; ?></td>
             <td>
-              <a href="index.php?page=mapel&action=hapus&kd=<?= $result['kd_mapel'] ?>" title="">
+              <a href="index.php?page=kelas&action=hapus&id=<?= $result['Id_kelas'] ?>" title="">
                 <span class="badge badge-danger">Hapus</span>
               </a>
 
-              <a href="index.php?page=edit_mapel&kd=<?= $result['kd_mapel'] ?>" title="">
+              <a href="index.php?page=edit_kelas&id=<?= $result['Id_kelas'] ?>" title="">
                 <span class="badge badge-warning">Edit</span>
               </a>
             </td>

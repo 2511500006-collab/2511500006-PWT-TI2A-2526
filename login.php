@@ -97,11 +97,14 @@ if (isset($_POST['username'])) {
         $userquery = mysqli_fetch_array(mysqli_query($koneksi, 
         "SELECT * FROM tabel_user WHERE username = '$username' AND password = '$password'"));
 
-        if ($userquery) {
-            $_SESSION['role'] = $userquery['role'];
-            $_SESSION['username'] = $username;
-            header("location:index.php");
-          } else {
+      if ($userquery) {
+          $_SESSION['id_user'] = $userquery['id_user'];
+          $_SESSION['role'] = $userquery['role'];
+          $_SESSION['username'] = $userquery['username'];
+          header("location:index.php");
+           exit;
+        }
+          else {
             echo '<div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
             <h5><i class="icon fas fa-ban"></i> Alert!</h5>
